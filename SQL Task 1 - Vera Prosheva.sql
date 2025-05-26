@@ -9,7 +9,7 @@ select c.FirstName, e.LastName
 from dbo.Customer as c
 cross join dbo.Employee as e
 
---2. Put the resultset in new table called MyNames. Table should have only 1 column – MyFullName
+--2. Put the resultset in new table called MyNames. Table should have only 1 column â€“ MyFullName
 
 create table #MyNames (MyFullName nvarchar(255))
 
@@ -20,4 +20,8 @@ cross join dbo.Employee as e
 
 select * from #MyNames
 
---3. Prepare query that will read the data stored in MyNames table and provide 2 columns as resultset – FirstName and LastNameselect *, left(MyFullName, charindex(' ', MyFullName) - 1) as FirstName, 		  right(MyFullName, len(MyFullName) - charindex(' ', MyFullName)) as LastNamefrom #MyNames
+--3. Prepare query that will read the data stored in MyNames table and provide 2 columns as resultset â€“ FirstName and LastName
+
+select *, left(MyFullName, charindex(' ', MyFullName) - 1) as FirstName, 
+		  right(MyFullName, len(MyFullName) - charindex(' ', MyFullName)) as LastName
+from #MyNames
