@@ -1,2 +1,2 @@
 # SQL-Challenges
-Brainster code challenges by practicing SQL.
+Brainster Academy code challenges by practicing SQL.
